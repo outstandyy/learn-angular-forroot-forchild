@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, shareReplay, timer } from 'rxjs';
 
 @Component({
   selector: 'lib-polling',
@@ -11,5 +12,6 @@ import { Component } from '@angular/core';
   ]
 })
 export class PollingComponent {
+
 
 }

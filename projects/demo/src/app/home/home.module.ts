@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
 
+import { HomeComponent } from './home.component';
+import { PollingModule } from '../../../../polling/src/lib/polling.module';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { HomeComponent } from './home.component';
     HomeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PollingModule,
   ]
 })
 export class HomeModule { }

@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { PollingComponent } from './polling.component';
+import { PollingService } from './polling.service';
 
 
 
@@ -10,7 +11,19 @@ import { PollingComponent } from './polling.component';
   imports: [
   ],
   exports: [
-    PollingComponent
-  ]
+    PollingComponent,
+  ],
+  // Removed because of `forRoot()`
+  // providers: [
+  //   PollingService,
+  // ]
 })
-export class PollingModule { }
+export class PollingModule {
+  static forRoot(): ModuleWithProviders<PollingModule> {
+
+    return {
+      ngModule: PollingModule,
+      providers: [PollingService],
+    };
+  }
+}

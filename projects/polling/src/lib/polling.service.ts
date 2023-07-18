@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable, shareReplay, timer } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PollingService {
-
-  constructor() { }
+  public polling$: Observable<number> = timer(0, 1000).pipe(shareReplay());
 }
